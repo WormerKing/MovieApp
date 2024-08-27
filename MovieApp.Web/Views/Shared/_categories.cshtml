@@ -1,0 +1,12 @@
+﻿@model List<Genre>
+<div class="category">
+    <ul class="list-group bg-dark text-center border border-dark">
+        @foreach (Genre category in Model)
+        {
+            <a href="/home/category/@category.Id">
+                <li class="list-group-item border border-dark">@category.Name</li>
+            </a>
+        }
+    </ul>
+
+</div>

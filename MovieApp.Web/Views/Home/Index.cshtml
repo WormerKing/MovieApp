@@ -1,0 +1,16 @@
+﻿@model Movie
+<!DOCTYPE html5>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Home Index</title>
+    </head>
+<body>
+    <p>Film ismi: @Model.Title</p>
+    <p>Film Açıklaması: @Model.Description</p>
+    <p>Film Yönetmeni: @Model.Director</p>
+    @foreach (string actor in Model.Actors.Split(","))
+    {
+        <p>Aktör ismi: @actor</p>
+    }
+</body>
+</html>

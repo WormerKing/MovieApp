@@ -1,0 +1,16 @@
+﻿@model Movie
+<div class="film">
+    <p>@Model.Title</p>
+    <a href="/home/show/@Model.Id" class="btn btn-primary">Detaylar</a><hr/>
+    <a href="/home/edit/@Model.Id" class="btn btn-warning">Düzenle</a><hr/>
+    <form asp-controller="Home" asp-action="delete" method="post">
+        <input type="hidden" value="@Model.Id" asp-for="Id">
+        <button type="submit" class="btn btn-danger">Sil</button>
+    </form>
+    <ul>
+        @foreach (string actor in Model.Actors.Split(","))
+        {
+            <li>@actor</li>
+        }
+    </ul>
+</div>

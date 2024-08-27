@@ -1,0 +1,18 @@
+﻿@model List<Genre>
+<div class="category">
+    <ul class="list-group bg-dark text-center border border-dark">
+        <a href="/home/category" style="text-decoration:none;">
+            <li class="list-group-item border border-dark @(ViewBag.SelectedGenre == null ? "active" : "")">Tüm Filmler</li>
+        </a>
+        @foreach (Genre category in Model)
+        {
+            <a href="/home/category/@category.Id" style="text-decoration:none;">
+                <li class="list-group-item border border-dark @(ViewBag.SelectedGenre == category.Id.ToString() ? "active" : "")">@category.Name</li>
+            </a>
+        }
+    </ul>
+</div>
+
+@section stylesheets {
+    <link rel="stylesheet" href="~/css/MovieList.css">
+}

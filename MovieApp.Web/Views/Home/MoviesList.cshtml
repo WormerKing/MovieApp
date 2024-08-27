@@ -1,0 +1,20 @@
+﻿@model MovieGenreViewModel
+<!DOCTYPE html5>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home Index</title>
+    <link rel="stylesheet" href="/css/MovieList.css" type="text/css">
+</head>
+<body>
+    @section header {
+        @await Html.PartialAsync("_header")
+    }
+    @section categories {
+        @*await Html.PartialAsync("_categories",Model.Genres)*@
+        @await Component.InvokeAsync("Genres")
+    }
+    @foreach (Movie movie in Model.Movies) {
+        @Html.Partial("_movie", movie)
+    }
+</body>
+</html>

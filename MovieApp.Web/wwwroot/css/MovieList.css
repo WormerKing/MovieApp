@@ -1,0 +1,13 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+.film {
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+a {
+    text-decoration: none;
+}
